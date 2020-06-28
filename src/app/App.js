@@ -1,9 +1,9 @@
 import React from 'react';
 
+import Counter from './Counter';
+
 const App = () => (
-    <div>
-        star realms counter
-    </div>
+    <Counter />
 );
 
 export default App;
