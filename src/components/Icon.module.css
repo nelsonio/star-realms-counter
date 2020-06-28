@@ -1,0 +1,14 @@
+.main {
+    border: none;
+    background: none;
+    color: inherit;
+    height: 1em;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.main.disabled {
+    color: var(--color-disabled);
+    border-color: var(--color-disabled);
+    cursor: not-allowed;
+}

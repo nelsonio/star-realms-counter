@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 
-import {Name, PlayerLayout} from '../components';
+import {Name, PlayerLayout, Rotator} from '../components';
 import Counter from './Counter';
 
 const Player = () => {
     const [name, setName] = useState('');
 
-    return <PlayerLayout name={<Name name={name} onNameChange={setName} />} counter={<Counter />} />;
+    return (
+        <Rotator>
+            <PlayerLayout name={<Name name={name} onNameChange={setName} />} counter={<Counter />} />
+        </Rotator>
+    );
 };
 
 Player.propTypes = {};

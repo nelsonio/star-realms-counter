@@ -3,7 +3,10 @@
     --color-text: white;
 
     --color-primary: rgb(134 190 66);
+    --color-disabled: hsla(121, 15%, 50%, 0.7);
 
     --border-width: 0.125rem;
     --border-radius: 0.5rem;
+
+    --text-shadow: 0 0.125rem 0.125em rgba(0, 0, 0, 0.3);
 }

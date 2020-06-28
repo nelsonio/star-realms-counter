@@ -1,0 +1,19 @@
+.main {
+    display: grid;
+    position: relative;
+}
+
+.fullSize {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.button {
+    z-index: 2;
+}
+
+.component {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    z-index: 1;
+}

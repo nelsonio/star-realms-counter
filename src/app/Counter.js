@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {CountButton, CounterLayout} from '../components';
 
 const Counter = () => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(50);
 
     const changeCount = (amount) => {
         const newCount = count + amount;

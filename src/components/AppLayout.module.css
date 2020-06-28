@@ -1,10 +1,11 @@
 .main {
     display: grid;
     box-sizing: border-box;
-    height: 90vh;
-    padding: 20vmin;
-    align-content: space-around;
-    gap: 10vmin
+    height: 95vh;
+    align-content: center;
+    justify-content: center;
+    gap: 15vmin;
+    overflow-y: hidden;
 }
 
 @media (orientation: landscape) {

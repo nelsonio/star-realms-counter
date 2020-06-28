@@ -12,7 +12,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background-image:
-    linear-gradient(145deg, rgb(0 0 0 / 0.2), rgb(0 0 0 / 0.3)),
-    url('assets/nasa-rTZW4f02zY8-unsplash.jpg');
+    linear-gradient(145deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url('assets/nasa-unsplash.jpg');
   background-size: cover;
 }

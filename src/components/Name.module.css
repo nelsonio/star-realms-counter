@@ -6,4 +6,11 @@
     border: none;
     color: var(--color-primary);
     line-height: 2;
+    font-size: 1.125rem;
+    text-shadow: var(--text-shadow);
+}
+
+.main::placeholder {
+    font-style: italic;
+    color: var(--color-disabled);
 }
