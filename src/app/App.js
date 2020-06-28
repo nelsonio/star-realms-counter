@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Counter from './Counter';
+import {AppLayout} from '../components';
+import Player from './Player';
 
 const App = () => (
-    <>
-        <Counter />
-        <Counter />
-    </>
+    <AppLayout>
+        <Player />
+        <Player />
+    </AppLayout>
 );
 
 export default App;

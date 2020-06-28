@@ -1,0 +1,9 @@
+.main {
+    text-align: center;
+    box-sizing: border-box;
+    width: 70%;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    line-height: 2;
+}

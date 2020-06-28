@@ -1,0 +1,9 @@
+:root {
+    --color-background: black;
+    --color-text: white;
+
+    --color-primary: rgb(134 190 66);
+
+    --border-width: 0.125rem;
+    --border-radius: 0.5rem;
+}

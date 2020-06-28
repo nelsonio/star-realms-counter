@@ -1,0 +1,19 @@
+.main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.5rem;
+}
+
+.main :nth-child(1),
+.main :nth-child(4) {
+    justify-self: end;
+}
+
+.count {
+    margin: 0;
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--color-primary);
+}

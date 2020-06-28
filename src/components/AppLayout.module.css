@@ -1,0 +1,14 @@
+.main {
+    display: grid;
+    box-sizing: border-box;
+    height: 90vh;
+    padding: 20vmin;
+    align-content: space-around;
+    gap: 10vmin
+}
+
+@media (orientation: landscape) {
+    .main {
+        grid-auto-flow: column;
+    }
+}

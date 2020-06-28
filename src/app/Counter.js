@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 
-import {CountButton} from '../components';
+import {CountButton, CounterLayout} from '../components';
 
 const Counter = () => {
-    const [name, setName] = useState('');
     const [count, setCount] = useState(0);
 
     const changeCount = (amount) => {
@@ -12,18 +11,13 @@ const Counter = () => {
     };
 
     return (
-        <section>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            <div>
-                <CountButton changeCount={changeCount} amount={10} />
-                <CountButton changeCount={changeCount} amount={1} />
-            </div>
-            <h2>{count}</h2>
-            <div>
-                <CountButton changeCount={changeCount} disabled={count === 0} amount={-10} />
-                <CountButton changeCount={changeCount} disabled={count === 0} amount={-1} />
-            </div>
-        </section>
+        <CounterLayout
+            count={count}
+            addTen={<CountButton changeCount={changeCount} amount={10} />}
+            addOne={<CountButton changeCount={changeCount} amount={1} />}
+            subtractTen={<CountButton changeCount={changeCount} amount={-10} disabled={count === 0} />}
+            subtractOne={<CountButton changeCount={changeCount} amount={-1} disabled={count === 0} />}
+        />
     );
 };
 
