@@ -4,13 +4,15 @@
     height: 95vh;
     align-content: center;
     justify-content: center;
-    gap: 15vmin;
+    gap: 10vmin;
     overflow-y: hidden;
+    padding: 0 20vw;
 }
 
 @media (orientation: landscape) {
     .main {
         grid-auto-flow: column;
+        padding: 0 15vw;
     }
 }
 
