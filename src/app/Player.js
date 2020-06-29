@@ -19,7 +19,6 @@ const updateNames = (names, newName, playerIndex) => {
 
 const Player = ({playerIndex}) => {
     const names = localStorage.getItem(NAMES_KEY)?.split(SEPARATOR);
-    console.log(names);
     const [name, setName] = useState(names[playerIndex]);
 
     const changeName = (newName) => {

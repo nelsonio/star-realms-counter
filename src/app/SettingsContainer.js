@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
-import {Settings} from '../components';
+
+import {Button, Settings} from '../components';
 
 const SettingsContainer = () => {
     const [open, setOpen] = useState(false);
 
     return (
         <Settings open={open} setOpen={setOpen}>
-            TODO: Reset points
+            <Button onClick={() => window.location.reload()} label="Reset points" />
         </Settings>
     );
 };

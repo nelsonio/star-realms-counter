@@ -1,3 +1,11 @@
 .main {
     font-size: 1.5rem;
 }
+
+.main:nth-of-type(odd) {
+    padding-left: 1rem;
+}
+
+.main:nth-of-type(even) {
+    padding-right: 1rem;
+}
