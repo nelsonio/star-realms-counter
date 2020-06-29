@@ -11,16 +11,14 @@ const Rotator = ({children}) => {
     const rotate = () => setRotation((rotation + 90) % 360);
     console.log(rotation);
     return (
-        <div className={styles.main}>
+        <div
+            className={styles.main}
+            style={{
+                transform: `rotate(${rotation}deg)`,
+            }}
+        >
             <Icon icon={faSyncAlt} onClick={rotate} className={classNames(styles.fullSize, styles.button)} />
-            <div
-                style={{
-                    transform: `rotate(${rotation}deg)`,
-                }}
-                className={classNames(styles.fullSize, styles.component)}
-            >
-                {children}
-            </div>
+            <div className={classNames(styles.fullSize, styles.component)}>{children}</div>
         </div>
     );
 };

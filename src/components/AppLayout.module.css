@@ -13,3 +13,8 @@
         grid-auto-flow: column;
     }
 }
+
+.settings {
+    position: absolute;
+    right: 0;
+}

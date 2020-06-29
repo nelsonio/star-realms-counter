@@ -2,9 +2,10 @@ import React from 'react';
 
 import {AppLayout} from '../components';
 import Player from './Player';
+import Settings from './SettingsContainer';
 
 const App = () => (
-    <AppLayout>
+    <AppLayout settings={<Settings />}>
         <Player />
         <Player />
     </AppLayout>

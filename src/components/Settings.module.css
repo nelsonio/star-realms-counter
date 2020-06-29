@@ -1,0 +1,19 @@
+.settings {
+    background-color: var(--color-background);
+    margin: 0.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.openIcon {
+    margin: 0.5rem;
+}
+
+.closeIcon {
+}
+
+.content {
+    padding: 0.5rem 1rem;
+}
