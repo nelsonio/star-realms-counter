@@ -6,8 +6,8 @@ import Settings from './SettingsContainer';
 
 const App = () => (
     <AppLayout settings={<Settings />}>
-        <Player />
-        <Player />
+        <Player playerIndex={0} />
+        <Player playerIndex={1} />
     </AppLayout>
 );
 

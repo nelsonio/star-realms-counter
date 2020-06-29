@@ -9,7 +9,7 @@ import Icon from './Icon';
 const Rotator = ({children}) => {
     const [rotation, setRotation] = useState(0);
     const rotate = () => setRotation((rotation + 90) % 360);
-    console.log(rotation);
+
     return (
         <div
             className={styles.main}
