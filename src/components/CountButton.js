@@ -17,19 +17,14 @@ const getIcon = (amount) => {
     }
 };
 
-const CountButton = ({changeCount, amount, disabled}) => {
+const CountButton = ({changeCount, amount}) => {
     const icon = getIcon(amount);
-    return <Icon icon={icon} onClick={() => changeCount(amount)} disabled={disabled} className={styles.main} />;
+    return <Icon icon={icon} onClick={() => changeCount(amount)} className={styles.main} />;
 };
 
 CountButton.propTypes = {
     changeCount: PropTypes.func.isRequired,
     amount: PropTypes.number.isRequired,
-    disabled: PropTypes.bool,
-};
-
-CountButton.defaultProps = {
-    disabled: false,
 };
 
 export default CountButton;

@@ -8,8 +8,12 @@ const Name = ({name, onNameChange}) => (
 );
 
 Name.propTypes = {
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     onNameChange: PropTypes.func.isRequired,
+};
+
+Name.defaultProps = {
+    name: undefined,
 };
 
 export default Name;

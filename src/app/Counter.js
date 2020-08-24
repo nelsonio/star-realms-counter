@@ -1,24 +1,31 @@
-import React, {useState} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 import {CountButton, CounterLayout} from '../components';
+import store from '../store';
 
-const Counter = () => {
-    const [count, setCount] = useState(50);
+const Counter = ({count, onAdjustPoints}) => (
+    <CounterLayout
+        count={count}
+        addTen={<CountButton changeCount={onAdjustPoints} amount={10} />}
+        addOne={<CountButton changeCount={onAdjustPoints} amount={1} />}
+        subtractTen={<CountButton changeCount={onAdjustPoints} amount={-10} />}
+        subtractOne={<CountButton changeCount={onAdjustPoints} amount={-1} />}
+    />
+);
 
-    const changeCount = (amount) => {
-        const newCount = count + amount;
-        setCount(newCount > 0 ? newCount : 0);
-    };
-
-    return (
-        <CounterLayout
-            count={count}
-            addTen={<CountButton changeCount={changeCount} amount={10} />}
-            addOne={<CountButton changeCount={changeCount} amount={1} />}
-            subtractTen={<CountButton changeCount={changeCount} amount={-10} disabled={count === 0} />}
-            subtractOne={<CountButton changeCount={changeCount} amount={-1} disabled={count === 0} />}
-        />
-    );
+Counter.propTypes = {
+    count: PropTypes.number.isRequired,
+    onAdjustPoints: PropTypes.func.isRequired,
 };
 
-export default Counter;
+const mapStateToProps = (state, {playerIndex}) => ({
+    count: store.getPlayerScore(state, playerIndex),
+});
+
+const mapDispatchToProps = (dispatch, {playerIndex}) => ({
+    onAdjustPoints: (amount) => dispatch(store.adjustPoints(playerIndex, amount)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
