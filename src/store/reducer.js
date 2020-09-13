@@ -2,25 +2,28 @@ import {combineReducers} from 'redux';
 import {List} from 'immutable';
 
 import {SET_PLAYER_NAME, ADJUST_POINTS} from './actions';
-import {getNames} from '../utils/localStorage';
+import {getNames, getScore, updateStorageNames, updateStorageScore} from '../utils/localStorage';
 
-const names = getNames();
-// score - map
+const storageNames = getNames();
+const storageScore = getScore();
 
-const players = (state = List(names), action) => {
+const players = (state = List(storageNames), action) => {
     if (action.type === SET_PLAYER_NAME) {
-        return state.set(action.index, action.name);
+        const updatedState = state.set(action.index, action.name);
+        updateStorageNames(updatedState);
+        return updatedState;
     } else {
         return state;
     }
 };
 
-const score = (state = List([50, 50]), action) => {
-    switch (action.type) {
-        case ADJUST_POINTS:
-            return state.update(action.index, (prevCount) => prevCount + action.amount);
-        default:
-            return state;
+const score = (state = List(storageScore), action) => {
+    if (action.type === ADJUST_POINTS) {
+        const updatedState = state.update(action.index, (prevCount) => prevCount + action.amount);
+        updateStorageScore(updatedState);
+        return updatedState;
+    } else {
+        return state;
     }
 };
 

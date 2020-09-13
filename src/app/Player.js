@@ -5,20 +5,12 @@ import {connect} from 'react-redux';
 import store from '../store';
 import {Name, PlayerLayout, Rotator} from '../components';
 import Counter from './Counter';
-import {updateStorageNames} from '../utils/localStorage';
 
-const Player = ({name, playerIndex, onSetPlayerName}) => {
-    const changeName = (newName) => {
-        updateStorageNames(playerIndex, newName);
-        onSetPlayerName(newName);
-    };
-
-    return (
-        <Rotator>
-            <PlayerLayout name={<Name name={name} onNameChange={changeName} />} counter={<Counter playerIndex={playerIndex} />} />
-        </Rotator>
-    );
-};
+const Player = ({name, playerIndex, onSetPlayerName}) => (
+    <Rotator>
+        <PlayerLayout name={<Name name={name} onNameChange={onSetPlayerName} />} counter={<Counter playerIndex={playerIndex} />} />
+    </Rotator>
+);
 
 Player.propTypes = {
     playerIndex: PropTypes.number.isRequired,
