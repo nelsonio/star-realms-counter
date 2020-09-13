@@ -1,15 +1,21 @@
 import React, {useState} from 'react';
+import {connect} from 'react-redux';
 
 import {Button, Settings} from '../components';
+import store from '../store';
 
-const SettingsContainer = () => {
+const SettingsContainer = ({onResetPoints}) => {
     const [open, setOpen] = useState(false);
 
     return (
         <Settings open={open} setOpen={setOpen}>
-            <Button onClick={() => window.location.reload()} label="Reset points" />
+            <Button onClick={onResetPoints} label="Reset points" />
         </Settings>
     );
 };
 
-export default SettingsContainer;
+const mapDispatchToProps = {
+    onResetPoints: store.resetPoints,
+};
+
+export default connect(null, mapDispatchToProps)(SettingsContainer);
